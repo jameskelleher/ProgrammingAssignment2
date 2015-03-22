@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix returns a list a funcitons that can reference a matrix and its inverse
+## cacheSolve solves matrix by accessing cached inverse (or calculating inverse if no cache)
 
-## Write a short comment describing this function
+## inv stands for inverse, is initialized to NULL
+## get() returns the matrix
+## set() sets the matrix
+## getinv() returns the inverse
+## setinv() sets the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -16,7 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## x is the list that refers back to a cache matrix
+## if the inverse of x is unknown, we calculate it using solve()
+## otherwise, we simply return the inverse
 
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
